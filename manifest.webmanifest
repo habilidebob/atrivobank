@@ -1,0 +1,27 @@
+{
+  "id": "./index.htm",
+  "name": "AtrivoBank",
+  "short_name": "AtrivoBank",
+  "description": "Aplicativo financeiro AtrivoBank.",
+  "lang": "pt-BR",
+  "start_url": "./index.htm#/login",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#002F5F",
+  "icons": [
+    {
+      "src": "static/icone-256.png",
+      "sizes": "726x726",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "static/icone-512.png",
+      "sizes": "1451x1451",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

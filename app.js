@@ -5,9 +5,9 @@
    ============================================================ */
 const CONFIG = {
   PREFIX: 'bank.',
-  LOGO_LOGIN_SRC: 'https://i.postimg.cc/QxkZM0fb/logo.png',
-  LOGO_HOME_SRC: 'https://i.postimg.cc/QxkZM0fb/logo.png',
-  FOTO_USUARIO_PADRAO_SRC: 'foto-usuario.png',
+  LOGO_LOGIN_SRC: 'https://i.postimg.cc/rwDmRB7M/logo-.png',
+  LOGO_HOME_SRC: 'https://i.postimg.cc/rwDmRB7M/logo-.png',
+  FOTO_USUARIO_PADRAO_SRC: 'static/user-photo.png',
   DEMO_CPF: '123.456.789-09',
   DEMO_SENHA: '1204',
   SESSAO_MS: 1000 * 60 * 60 * 8,           // 8 horas (sem "lembrar")
@@ -162,14 +162,14 @@ function seed() {
   const DIA = 86400000;
 
   const user = {
-    nome: 'Marina Alves Ribeiro',
+    nome: 'Estevao Alves Cristina',
     cpf: '123.456.789-09',
     agencia: '0001',
     conta: '145739-8',
-    chavePix: '123.456.789-09',
-    email: 'marina.ribeiro@exemplo.com',
-    telefone: '(11) 98888-7766',
-    avatarIniciais: 'MR'
+    chavePix: '423.724.290-00',
+    email: 'estevao.alves@exemplo.com',
+    telefone: '(35) 98888-7766',
+    avatarIniciais: 'EC'
   };
 
   const modelo = [
@@ -463,7 +463,7 @@ function fecharModal() {
 
 function marcaLogo(classe, src) {
   return `<span class="${classe} brand-logo">
-    <span class="brand-logo-fallback" aria-hidden="true">AtrivoBank</span>
+    <span class="brand-logo-fallback" aria-hidden="true"></span>
     <img class="brand-logo-image" src="${esc(src)}" alt="AtrivoBank">
   </span>`;
 }
@@ -2291,6 +2291,11 @@ document.addEventListener('keydown', ev => {
 
 // Roteador
 window.addEventListener('hashchange', render);
+
+if ("serviceWorker" in navigator && ["http:", "https:"].includes(location.protocol)) {
+  navigator.serviceWorker.register("./sw.js")
+    .catch(error => console.error("Falha ao registrar o service worker:", error));
+}
 
 /* ============================================================
    14. BOOTSTRAP
